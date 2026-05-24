@@ -5,7 +5,7 @@ DESCRIPTION = "Collection of standalone C++ inference apps using the HailoRT API
                ONNX Runtime postprocessing."
 HOMEPAGE = "https://github.com/hailocs/hailo-apps-internal"
 LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=9b6d1545b0dc7e89c4f09e42bbd7e0f3"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=ec44867c99de13393426600248d2bedd"
 
 # ---------------------------------------------------------------------------
 # Source
@@ -26,6 +26,7 @@ S = "${WORKDIR}/git"
 
 # Build-time: headers and libraries needed to compile
 DEPENDS = " \
+    cmake-native \
     libhailort \
     opencv \
     yaml-cpp \
