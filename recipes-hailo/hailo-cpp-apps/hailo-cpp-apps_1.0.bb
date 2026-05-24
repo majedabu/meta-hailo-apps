@@ -72,6 +72,7 @@ inherit pkgconfig cmake
 # and the lib in ${STAGING_DIR_TARGET}/usr/lib/ — the CMakeLists find_path/find_library
 # will resolve both correctly when given the usr prefix.
 EXTRA_OECMAKE += "-DONNXRUNTIME_DIR=${STAGING_DIR_TARGET}/usr"
+EXTRA_OECMAKE += "-DHAILO_USE_SYSTEM_DEPS=ON"
 
 # ---------------------------------------------------------------------------
 # Build — one CMake invocation per app
