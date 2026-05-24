@@ -10,9 +10,9 @@ S = "${WORKDIR}/git"
 
 DEPENDS = "xtl"
 
-do_install() {
-    install -d ${D}${includedir}/xtensor
-    cp -r ${S}/include/xtensor/* ${D}${includedir}/xtensor
-}
+inherit cmake
 
-FILES:${PN} += "${includedir}/xtensor/*"
+# Header-only — nothing to compile
+do_compile[noexec] = "1"
+
+FILES:${PN} += "${includedir}/xtensor/* ${datadir}/cmake/xtensor/*"

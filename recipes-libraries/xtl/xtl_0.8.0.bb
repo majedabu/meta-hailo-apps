@@ -8,9 +8,9 @@ SRCREV = "ef84e9f27020ad54961c99acd293d80d4b775dd3"
 
 S = "${WORKDIR}/git"
 
-do_install() {
-    install -d ${D}${includedir}/xtl
-    cp -r ${S}/include/xtl/* ${D}${includedir}/xtl
-}
+inherit cmake
 
-FILES:${PN} += "${includedir}/xtl/*"
+# Header-only — nothing to compile
+do_compile[noexec] = "1"
+
+FILES:${PN} += "${includedir}/xtl/* ${datadir}/cmake/xtl/*"
