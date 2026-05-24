@@ -65,7 +65,7 @@ HAILO_APPS = " \
     zero_shot_classification \
 "
 
-inherit pkgconfig
+inherit pkgconfig cmake
 
 # Point onnxrt_hailo_pipeline's CMakeLists at the sysroot onnxruntime install.
 # Headers land in ${STAGING_DIR_TARGET}/usr/include/onnxruntime/core/session/
