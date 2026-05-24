@@ -66,6 +66,12 @@ HAILO_APPS = " \
 
 inherit pkgconfig
 
+# Point onnxrt_hailo_pipeline's CMakeLists at the sysroot onnxruntime install.
+# Headers land in ${STAGING_DIR_TARGET}/usr/include/onnxruntime/core/session/
+# and the lib in ${STAGING_DIR_TARGET}/usr/lib/ — the CMakeLists find_path/find_library
+# will resolve both correctly when given the usr prefix.
+EXTRA_OECMAKE += "-DONNXRUNTIME_DIR=${STAGING_DIR_TARGET}/usr"
+
 # ---------------------------------------------------------------------------
 # Build — one CMake invocation per app
 # ---------------------------------------------------------------------------
