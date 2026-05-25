@@ -12,8 +12,8 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=ec44867c99de13393426600248d2bedd"
 # ---------------------------------------------------------------------------
 # submodules=1 fetches yaml-cpp and curl bundled under hailo_apps/cpp/external/
 SRC_URI = "git://github.com/hailocs/hailo-apps-internal.git;protocol=https;branch=feature/cpp-apps-astrial-imx8;submodules=1"
+SRC_URI += "file://onnxrt-remove-extproject.patch;patchdir=${S}"
 
-# Pin to a fixed commit for reproducible builds.
 # Use AUTOREV only during active development.
 SRCREV = "${AUTOREV}"
 PV = "1.0+git${SRCPV}"
@@ -31,7 +31,9 @@ DEPENDS = " \
     opencv \
     yaml-cpp \
     curl \
+    xtl \
     xtensor \
+    zlib \
     onnxruntime \
 "
 
